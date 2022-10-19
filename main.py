@@ -1,5 +1,8 @@
 #%%
 
+import datetime
+start_time = datetime.datetime.now()
+
 import os
 import cv2
 import enlighten
@@ -136,10 +139,6 @@ def train(
     video.release()
     
     
-    
-import datetime
-
-start_time = datetime.datetime.now()
 
 def duration():
     change_time = datetime.datetime.now() - start_time

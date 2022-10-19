@@ -1,4 +1,8 @@
 #%%
+import os
+try:    os.chdir("sample")
+except: pass
+
 import argparse
 
 parser = argparse.ArgumentParser()
@@ -15,6 +19,7 @@ import torch
 from torch import nn
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print("\n\nDevice: {}\n\n".format(device))
 
 class ConstrainedConv2d(nn.Conv2d):
     def forward(self, input):

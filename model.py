@@ -2,7 +2,6 @@
 import torch
 from torch import nn 
 import torch.optim as optim
-import torchgan.layers as gnn
 from torchinfo import summary as torch_summary
 
 from utils import device, ConstrainedConv2d, init_weights, image_size
@@ -55,11 +54,7 @@ class Autoencoder(nn.Module):
                 stride = (2,2),
                 padding = (1,1)),
             
-            nn.Dropout(.2),
-            
-            gnn.SelfAttention2d(
-                input_dims = 32, 
-                output_dims = 32))
+            nn.Dropout(.2))
         
         example = torch.zeros([1, 3, image_size, image_size])
         example = self.image_in(example).flatten(1)
@@ -147,6 +142,4 @@ if __name__ == "__main__":
     print(autoencoder)
     print()
     print(torch_summary(autoencoder, (1, image_size, image_size, 3)))
-    
-print("models.py loaded.")
 # %%

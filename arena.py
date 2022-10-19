@@ -64,5 +64,4 @@ if __name__ == "__main__":
     arena.start()
     for i in range(100):
         arena.take_photo(show = True)
-print("arena.py loaded.")
 # %%

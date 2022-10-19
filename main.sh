@@ -6,4 +6,4 @@
 ##SBATCH --constraint 32
 
 module load singularity cuda/11.1
-singularity exec t_maze.sif python sample/main.py --image_size 128
+singularity exec --nv t_maze.sif python sample/main.py --image_size 128
