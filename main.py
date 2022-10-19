@@ -139,12 +139,15 @@ def train(
     
 import datetime
 
+start_time = datetime.datetime.now()
+
 def duration():
     change_time = datetime.datetime.now() - start_time
     return(change_time)
 
 if __name__ == "__main__":
-    start_time = datetime.datetime.now()
     train()
+    
+    print("\n\n")
     print(duration())
 # %%
